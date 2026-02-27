@@ -1,0 +1,23 @@
+{
+  "name": "com.hatotools.vrc-material-atlas",
+  "version": "1.0.0",
+  "displayName": "VRC Material Atlas",
+  "description": "VRChatアバターの複数マテリアルを1つのアトラスに統合してMaterial Slotsを削減するツール",
+  "unity": "2022.3",
+  "documentationUrl": "",
+  "changelogUrl": "",
+  "license": "MIT",
+  "keywords": [
+    "vrchat",
+    "avatar",
+    "optimization",
+    "atlas",
+    "material",
+    "texture"
+  ],
+  "author": {
+    "name": "HatoTools",
+    "url": "https://hatotools.booth.pm"
+  },
+  "vpmDependencies": {}
+}
