@@ -12,7 +12,7 @@ jobs:
 
       - uses: game-ci/unity-activate@v1
         with:
-          unityVersion: 2022.3.22f1
+          unityVersion: 2022.3.54f1
         env:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
