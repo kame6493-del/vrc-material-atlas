@@ -5,17 +5,21 @@ on:
 
 jobs:
   activate:
-    name: Get Unity Activation File
+    name: Get Unity License via Login
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - uses: game-ci/unity-request-activation-file@v2
-        id: getManualLicenseFile
+      - uses: game-ci/unity-activate@v1
         with:
           unityVersion: 2022.3.22f1
+        env:
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
 
-      - uses: actions/upload-artifact@v4
-        with:
-          name: Unity_Activation_File
-          path: ${{ steps.getManualLicenseFile.outputs.filePath }}
+      - name: Export license
+        run: |
+          cat /home/runner/.local/share/unity3d/Unity/Unity_lic.ulf || \
+          cat /root/.local/share/unity3d/Unity/Unity_lic.ulf || \
+          echo "License file not found in expected locations"
+          find / -name "Unity_lic.ulf" 2>/dev/null || true
